@@ -1,4 +1,4 @@
-package uz.pockit.skynet.pockit.db.entity
+package uz.pockit.skynet.pockit.database.entity
 
 import android.arch.persistence.room.*
 
@@ -11,7 +11,7 @@ import android.arch.persistence.room.*
         indices = [Index(value = ["parent_id"])])
 data class StorageGroup(@ColumnInfo(name = "name") var name: String,
                         @ColumnInfo(name = "visible") var visible: Boolean,
-                        @ColumnInfo(name = "parent_id") var parentId: Int) {
+                        @ColumnInfo(name = "parent_id") var parentId: Int?) {
     @ColumnInfo(name = "id")
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
